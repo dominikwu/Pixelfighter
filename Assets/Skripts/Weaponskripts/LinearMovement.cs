@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class LinearMovement : MonoBehaviour {
     private WeaponStats Stats; // Referece to Weaponstats
-    private Rigidbody   rb;
+    private Rigidbody   rb;     
     // private Collider others;
     // Use this for initialization
     void Start ()
     {
+        // Initialize the Direction of the Weapon and let it fly in a line until it hits something or enters the Boundary
         rb = GetComponent<Rigidbody>();
         Stats = GetComponent<WeaponStats>();
         if (Stats.IsAdditionalShot == false)

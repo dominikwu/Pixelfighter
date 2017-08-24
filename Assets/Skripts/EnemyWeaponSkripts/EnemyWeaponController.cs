@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyWeaponController : MonoBehaviour {
-    public GameObject[] Weapons;
-    public GameObject SelectedWeapon;
+    public GameObject[] Weapons;        // all possible weapons are attached to this
+    public GameObject SelectedWeapon;   
     public Transform[] ShotSpawns;
     public Transform ShotSpawn;
     public EnemyWeaponStats Stats;
