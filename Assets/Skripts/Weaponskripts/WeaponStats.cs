@@ -8,6 +8,7 @@ public class WeaponStats : MonoBehaviour {
     public float speed;
     public float ReloadTime;
     // Use this for initialization
+    //gittest
     void Start () {
        
     }
