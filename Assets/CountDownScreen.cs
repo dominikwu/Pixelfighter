@@ -12,6 +12,8 @@ public class CountDownScreen : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        //Countdown when the game starts
         if (Time.timeSinceLevelLoad <= 1)
         {
             CountDownText.fontSize = (int)Mathf.Lerp((int)80, (int)10, Time.timeSinceLevelLoad);

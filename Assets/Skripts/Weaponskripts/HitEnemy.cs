@@ -21,7 +21,7 @@ public class HitEnemy : MonoBehaviour {
     {
         if((UnitHit = other.GetComponent<UnitController>())!= null)
         {
-            UnitHit.TakeDamage(Stats.Damage);
+            UnitHit.TakeDamage(Stats.Damage); // if the Object hit got a Unitcontroller skript attached(only enemys have it so far) do Damage and destroy the bullet
             Destroy(gameObject);
         }
     }

@@ -5,20 +5,20 @@ using UnityEngine;
 public class UnitController : MonoBehaviour {
 
     /* Controlls the behaviour and the Stats of an Object and has References to all possible skripts */
-    public GameObject Player;
-    private Objectstats                     Stats;
-    private EnemyMovementEasy               MovementEasy;
+    public GameObject Player; // Reference to the Player to chase him
+    private Objectstats                     Stats;  // Reference to the stats this enemy has
+    private EnemyMovementEasy               MovementEasy;// different skripts for moving and shooting
     private EnemyMovementMedium             MovementMedium;
     private EnemyMovementHard               MovementHard;
     private EnemyShootingEasy               ShootingEasy;
     private EnemyShootingMedium             ShootingMedium;
     private EnemyShootingHard               ShootingHard;
     public  Rigidbody                       rb;
-    private bool GameFinished;
+    private bool GameFinished;          // disable movement and  shooting when the player is dead
 	// All Components get initialized
 	void Awake () {
-        Player = GameObject.FindGameObjectWithTag("Player");
-        EnemySpawns.EnemyCount++;
+        Player = GameObject.FindGameObjectWithTag("Player");    // identify the player to chase
+        EnemySpawns.EnemyCount++;           // increase the global enemycount by 1
         Stats           = GetComponent<Objectstats>();
         rb              = GetComponent<Rigidbody>();
 
@@ -38,7 +38,7 @@ public class UnitController : MonoBehaviour {
 	// No Updates
 	void Update ()
     {
-        if(Player == null&& !GameFinished)
+        if(Player == null&& !GameFinished)// disable all skripts when the player is dead and set game to finished
         {
             DisableAllSkripts();
             rb.velocity = new Vector3(0f, 0f, 0f);
@@ -46,7 +46,7 @@ public class UnitController : MonoBehaviour {
             GameFinished = true;
         }
 
-        if (Stats.Healthpoints < 5)
+        if (Stats.Healthpoints < 5) // different skripts when HP falls below some point
         {
             
             rb.velocity = new Vector3(0, 0, 0);

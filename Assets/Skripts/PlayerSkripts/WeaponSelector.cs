@@ -43,7 +43,7 @@ public class WeaponSelector : MonoBehaviour {
     {
 #region Fire Weapon
         //Function to Fire Weapons
-        if (Input.GetButton("Fire1") && (NextShotReady <= 0f))
+        if (Input.GetButton("Fire1") && (NextShotReady <= 0f))  // when fire is triggered and the weapon is reloaded spawn a shot and set reloadtime
         {   
             Instantiate(WeaponSelected, ShotSpawn.position, ShotSpawn.rotation);
             NextShotReady = WeaponStats.ReloadTime;
